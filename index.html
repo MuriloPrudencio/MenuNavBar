@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Hamburguer</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a class="logo" href="">Logo</a>
+
+      <!--(aria-expanded => se expande algum conteudo ou não )
+       Iniciando com falso, quer dizer que temos uma áre mas não
+        esta expandida, que o conteudo de dentor não está a mostra
+        Foi criado no Javascript para mapear de forma dinamica, se estara
+        ativado ou não..  
+
+        (aria-controls => Mostra para o leitor de tela qual area ele controla)
+        Passando como parêmtro a class da nossa UL que é MENU, 
+        detsa forma o leitor de tela irá entender que o BUTTON MOBILE, controla a 
+        área do menu navegacional mobile..
+
+        (aria-haspopup => indica que nessa ara tem um elemento popup)
+        setando como TRUE mostra ao leitor que tem conteudo..
+        Mostrando para o leitor que ao cliclar no elemento BTN MOBILE outro elemento
+        abre.
+
+        (aria-label => É uma mensagem que o leitor de tela ira ler para o usuário)
+        Nesse caso o leitor irá ler para o usuário Abrir Menu..
+        Foi criado no Javascript uma condicional, para que se estiver aberto o menu,
+        o leitor leia a seguinte frase "Fechar menu", e se estiver fechado "Abrir menu"
+        tudo dinamicamente.
+
+        (role => é o atributo para mostrar qual é a função da UL para o leitor de tela)
+        Nesse caso irá ter a propriedade MENU, propriedade padrão a ser usada..
+        -->
+
+      <!--Onde ficará todo o menu navegacional-->
+      <nav class="nav">
+        <!--Criando o Hamburguer-->
+        <button
+          class="btn-mobile"
+          aria-label="Abrir Menu"
+          aria-haspopup="true"
+          aria-controls="menu"
+          aria-expanded="false"
+        >
+          <span class="hamburguer"></span>
+        </button>
+        <ul class="menu" role="menu">
+          <li><a href="#">Sobre</a></li>
+          <li><a href="#">Produtos</a></li>
+          <li><a href="#">Portifolio</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <script src="/main.js"></script>
+  </body>
+</html>
